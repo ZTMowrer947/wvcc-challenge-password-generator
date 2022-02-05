@@ -70,12 +70,11 @@
 
     private int GetRandomCharacterCode(ICollection<int> alphabet, int? previousCharCode = null)
     {
-        var index = rng.Next(0, alphabet.Count);
-
-        var charCode = 0;
+        int charCode;
 
         do
         {
+            var index = rng.Next(0, alphabet.Count);
             charCode = alphabet.ElementAt(index);
         }
         while (charCode == previousCharCode);
